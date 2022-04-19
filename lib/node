@@ -54,7 +54,7 @@ ___x_cmd_npx(){
 }
 
 # TODO: To be removed
-___x_cmd_ts(){
+___x_cmd_ts_deprecated(){
 
     {
     local tspath
@@ -77,7 +77,7 @@ ___x_cmd_ts(){
 }
 
 # TODO: to fix
-___x_cmd_ts_new(){
+___x_cmd_ts(){
     local arg
     local argstr
     while [ $# -ge 0 ]; do
