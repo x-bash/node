@@ -53,6 +53,7 @@ ___x_cmd_npx(){
     ___x_cmd_node_exec_default npx "$@"
 }
 
+# TODO: To be removed
 ___x_cmd_ts(){
 
     {
@@ -75,7 +76,21 @@ ___x_cmd_ts(){
     ___x_cmd_ts "$@"
 }
 
-# EndSection
+# TODO: to fix
+___x_cmd_ts_new(){
+    local arg
+    local argstr
+    while [ $# -ge 0 ]; do
+        case "$arg" in
+            -*)     argstr="$argstr $arg"   ;;
+            *)      break
+        esac
+    done
+    local script
+    script="$1"
+    shift
+    x npx @typeshell/exec "$argstr" "$script" "$@"
+}
 
 ___x_cmd_node_inner(){
     local code
